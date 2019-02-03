@@ -2,25 +2,70 @@
 <html lang="en">
 	<head>
 		<title>Menu</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		 <!-- Bootstrap CDN copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+		<style>
+		body {
+			background-color: #E59F71;
+		}
+		
+		table th {
+			font-size: 1.8em;
+		}
+		
+		a {
+			color: #4F6D7A;
+		}
+		
+		a:visited {
+			color:darkviolet;
+		}
+		
+		a:hover {
+			font-weight: bold;
+		}
+		
+		a:active {
+			text-decoration: none;
+		}
+		
+		 table#beverages tr:nth-child(even) {
+			background-color: #E8DAB2;
+		}
+		nav .btn {
+        background-color: #4F6D7A;
+        color: #fef9ff;
+		}
+		
+		.jumbotron {
+		background-color: #E8DAB2;
+		}
+		</style>
 	</head>
 	
 	<body>
 		<main>
-			<header>
+			<header class="jumbotron">
 				<h1>Hasting's Pub and Grill</h1>
+				<h2 class="text-right mt-5">Hasting's is opening a new location in Belmont Shore!<h2>
 			</header>
 			
-			<hr />
-			
 			<nav>
-			<a href="index.html" target="_self">Home</a>
-			<a href="menu.html" target="_blank">Menu</a>
-			<a href="contact.html" target="_self">Contact Us</a>
-			</nav>
 			<hr />
-			<section>
-				<article>
-					<table width="50%">
+			<a href="index.html" class="btn badge-pill" target="_self">
+				<i class="fas fa-home"></i>
+			</a>
+			<a class="btn badge-pill" href="menu.html" target="_blank">Menu</a>
+			<a class="btn badge-pill" href="contact.html" target="_self">Contact Us</a>
+			<hr />
+			</nav>
+			
+			<section class="col">
+					<table class="col-lg-10">
 						<tr>
 							<th>Burger and Fries</th>
 							<th>Hot Dog and Chips</th>
@@ -60,17 +105,41 @@
 							<td>$7.95</td>
 						</tr>
 					</table>
-						
-			
-			
-			
-			<hr />
+				</section>
+				<section>
+					<table id="beverages" class="col-sm-6">
+						<tr>
+							<th colspan="2">Beverages</th>
+						</tr>
+						<tr>
+							<td colspan="2">Root Beer</td>
+							<td>$3.00</td>
+						</tr>
+						<tr>
+							<td colspan="2">Bottled Water</td>
+							<td>$1.25</td>
+						</tr>
+						<tr>
+							<td colspan="2">Lemonade</td>
+							<td>$1.00</td>
+						</tr>
+						<tr>
+							<td colspan="2">Iced Tea</td>
+							<td>$1.25</td>
+						</tr>
+					</table>	
+				</section>
 			
 			
 			<footer>
+			<hr />
 			<p> 760 4th St., Long Beach CA 90814 <br />
 				(562)-555-5555 </p>
+			<hr />
 			</footer>
 		</main>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	</body>
 </html>

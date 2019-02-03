@@ -2,66 +2,120 @@
 <html lang="en">
 	<head>
 		<title>Contact Us</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		 <!-- Bootstrap CDN copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+		<script type="text/JavaScript" src="scripts/contact.js"></script>
+		<style>
+		.required {
+			font-weight: bold;
+		}
+		
+		a {
+			color: #4F6D7A;
+		}
+		
+		a:visited {
+			color:darkviolet;
+		}
+		
+		a:hover {
+			font-weight: bold;
+		}
+		
+		a:active {
+			text-decoration: none;
+		}
+		nav .btn {
+        background-color: #C0D6Df;
+        color: #fef9ff; 
+		}
+		.form-group {
+		width: 40%;
+		}
+		</style>
 	</head>
 	
 	<body>
 		<main>
-			<header>
+			<header class="jumbotron">
 				<h1>Hasting's Pub and Grill</h1>
+				<h2 class="text-right mt-5">Hasting's is opening a new location in Belmont Shore!<h2>
 			</header>
 			
-			<hr />
-			
 			<nav>
-			<a href="index.html" target="_self">Home</a>
-			<a href="menu.html" target="_blank">Menu</a>
-			<a href="contact.html" target="_self">Contact Us</a>
-			</nav>
 			<hr />
+			<a class=" btn badge-pill" href="index.html" target="_self">
+				<i class="fas fa-home"></i>
+			</a>
+			<a class="btn badge-pill" href="menu.html" target="_blank">Menu</a>
+			<a class="btn badge-pill" href="contact.html" target="_self">Contact Us</a>
+			<hr />
+			</nav>
 			
 			<section>
-				<form>
-					<label for="name"><strong>Name:</strong></label>
-					<input type="text" id="name" name="name" /><br />
+				<form name="contact" onsubmit="return validateContact();">
+					<div class="form-group">
+						<label for="name" class="required">Name:</label>
+						<input type="text" id="name" name="name" class="form-control" placeholder="Enter Name"/>
+					</div>
+					<div class="form-group">
+						<label for="email" class="required">Email:</label>
+						<input type="email" class="form-control" id="email" name="email" placeholder="Enter email"/>
+					</div>
+					<div class="form-group">
+						<label for="phone">Phone:</label>
+						<input type="number" id="phone" name="phone" class="form-control" placeholder="555-555-5555"/>
+					</div>
+					<div class="form-group">
+						<label for="reason" class="required">Reason for Inquiry:</label>
+						<select id="reason" name="reason" class="form-control">
+							<option value="catering" selected>Catering</option>
+							<option value="private">Private Party</option>
+							<option value="feedback">Feedback</option>
+							<option value="other">Other</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="info">Additional Information:</label>
+						<textarea class="form-control" id="info" name="info" rows="3"></textarea>
+					</div>
+					<label for="visited" class="required">Have you been to the restaurant?</label>
+					<div class="form-check">	
+						<input class="form-check-input" type="radio" id="choice1" name="visited" value="no" checked>
+						<label for="choice1" class="form-check-label">No</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" id="choice2" name="visited" value="yes">
+						<label for="choice2" class="form-check-label">Yes</label>
+					</div>
+					<label for="contact" class="required">Best days to contact you:</label>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="monday" name="contact" value="monday">
+						<label class="form-check-label" for="monday">M</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="tuesday" name="contact" value="tuesday">
+						<label class="form-check-label" for="tuesday">T</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="wednesday" name="contact" value="wednesday">
+						<label class="form-check-label" for="wednesday">W</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="thursday" name="contact" value="thursday">
+						<label class="form-check-label" for="thursday">Th</label>
+					</div>
+					<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="friday" name="contact" value="friday">
+					<label class="form-check-label" for="friday">F</label><br />
+					</div>
+					<button type="submit" class="btn btn-primary">Submit Request</button>
 					
-					<label for="email"><strong>Email:</strong></label>
-					<input type="text" id="email" name="email" /><br />
-					
-					<label for="phone"><strong>Phone:</strong></label>
-					<input type="text" id="phone" name="phone" /><br />
-					
-					<label for="reason"><strong>Reason for Inquiry:</strong></label>
-					<select id="reason" name="reason">
-						<option value="catering" selected>Catering</option>
-						<option value="private">Private Party</option>
-						<option value="feedback">Feedback</option>
-						<option value="other">Other</option>
-					</select><br />
-					
-					<label for="info"><strong>Additional Information:</strong></label>
-					<textarea id="info" name="info"></textarea><br />
-					
-					<label for="visited"><strong>Have you been to the restaurant?</strong></label>
-					<input type="radio" id="choice1" name="visited" value="no" checked>
-					<label for="choice1">No</label>
-					<input type="radio" id="choice2" name="visited" value="yes">
-					<label for="choice2">Yes</label><br />
-					
-					<label for="contact"><strong>Best days to contact you:</strong></label>
-					<input type="checkbox" id="monday" name="contact" value="monday">
-					<label for="monday">M</label>
-					<input type="checkbox" id="tuesday" name="contact" value="tuesday">
-					<label for="tuesday">T</label>
-					<input type="checkbox" id="wednesday" name="contact" value="wednesday">
-					<label for="wednesday">W</label>
-					<input type="checkbox" id="thursday" name="contact" value="thursday">
-					<label for="thursday">Th</label>
-					<input type="checkbox" id="friday" name="contact" value="friday">
-					<label for="friday">F</label><br />
-					
-					<input type="submit" name="submit" value="Send Request" />
-					
-						
+					<span id="isValid"></span>	
 					
 			
 			
@@ -71,5 +125,8 @@
 				(562)-555-5555 </p>
 			</footer>
 		</main>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	</body>
 </html>
